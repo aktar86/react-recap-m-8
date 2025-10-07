@@ -13,11 +13,16 @@ export const router = createBrowserRouter([
     path: "/",
     element: <MainLayout></MainLayout>,
     errorElement: <ErrorPage></ErrorPage>,
-    children:[
-        {index:true, element: <Home></Home>},
-        {path: "/products", element: <Products></Products> },
-        {path: "/wishlist", element: <Wishlist></Wishlist> },
-        {path: "/products", element: <Footer></Footer> },
-    ]
-  }
+    children: [
+      {
+        index: true,
+        loader: () => fetch('./funnitureData.json'),
+        hydrateFallbackElement: <p>Loading...</p>,
+        element: <Home></Home>,
+      },
+      { path: "/products", element: <Products></Products> },
+      { path: "/wishlist", element: <Wishlist></Wishlist> },
+      { path: "/products", element: <Footer></Footer> },
+    ],
+  },
 ]);
