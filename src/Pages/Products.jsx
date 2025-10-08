@@ -10,7 +10,7 @@ const Products = () => {
     ? products.filter((product) => product.name.toLowerCase().includes(trim))
     : products;
 
-//   console.log(searchedProducts);
+
 
   return (
     <div className="py-10">
@@ -43,3 +43,24 @@ const Products = () => {
 };
 
 export default Products;
+
+
+
+
+      // <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      //   {searchedProducts.length > 0 ? (
+      //     searchedProducts.map((data) => (
+      //       <ProductsCard key={data.id} data={data}></ProductsCard>
+      //     ))
+      //   ) : (
+      //     <div className="col-span-full text-center py-10">
+      //       <p className="text-xl text-gray-500">Product not found</p>
+      //       <p className="text-sm text-gray-400 mt-2">
+      //         No products match your search "{search}"
+      //       </p>
+      //     </div>
+      //   )}
+      // </div>
+
+
+
